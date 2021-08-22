@@ -1,0 +1,28 @@
+{
+  "name": "fastify-mysql-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:api": "cross-env NODE_ENV=development docker-compose up -d  && nodemon server/index.js --config server/nodemon.json",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "coverage": "cat ./test/coverage/lcov.info | coveralls",
+    "lint": "eslint --fix {src,test,config}/**/*.{js,ts}",
+    "prettier": "prettier"
+  },
+  "author": "Golan Hadad",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.20.2",
+    "fastify-mysql": "^2.1.0",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
+    "sequelize-fastify": "^1.0.9"
+  }
+}
